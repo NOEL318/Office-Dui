@@ -1,4 +1,4 @@
-package com.officedui.office;
+package com.officedui.orders;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;

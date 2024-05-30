@@ -1,5 +1,6 @@
-package com.officedui.office;
+package com.officedui.user;
 
+import com.officedui.orders.Orders;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,5 +38,13 @@ public class User {
         this.role = role;
         this.address = address;
         System.out.println("User");
+    }
+
+    public boolean getPasswordConfirmation(String password) {
+        if (this.password.equals(password)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

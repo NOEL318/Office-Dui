@@ -1,4 +1,4 @@
-package com.officedui.office;
+package com.officedui.orders;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,8 +15,13 @@ import java.util.Map;
 public class OrdersController {
     @Autowired
     private OrdersService ordersService;
-    @PostMapping
+    @PostMapping("createOrder")
     public ResponseEntity<Orders> createOrder(@RequestBody Map<String, String> payload){
         return new ResponseEntity<Orders>(ordersService.createOrders(payload.get("status"), payload.get("id")), HttpStatus.CREATED);
+    }
+
+    @PostMapping("welcomeOrders")
+    public String welcomeOrders(){
+        return "Welcome from secure endpoint";
     }
 }

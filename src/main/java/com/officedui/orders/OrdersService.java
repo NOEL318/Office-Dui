@@ -1,5 +1,6 @@
-package com.officedui.office;
+package com.officedui.orders;
 
+import com.officedui.article.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

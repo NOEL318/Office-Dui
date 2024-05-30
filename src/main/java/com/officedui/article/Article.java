@@ -1,5 +1,6 @@
-package com.officedui.office;
+package com.officedui.article;
 
+import com.officedui.orders.Orders;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

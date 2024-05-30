@@ -1,4 +1,4 @@
-package com.officedui.office;
+package com.officedui.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +14,6 @@ import java.util.Map;
 public class UserController {
     @Autowired
     private UserService userService;
-
     @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestBody Map<String, String> payload) {
         System.out.println(payload + "payload");
@@ -23,7 +22,9 @@ public class UserController {
 
     @PostMapping("/sign")
     public ResponseEntity<User> signUser(@RequestBody Map<String, String> payload) {
-        return new ResponseEntity<User>(userService.signUser(payload.get("email")), HttpStatus.OK);
+        ResponseEntity response= new ResponseEntity<User>(userService.signUser(payload.get("email"), payload.get("password")), HttpStatus.OK);
+        System.out.println(response);
+        return response;
     }
 
 }
